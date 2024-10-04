@@ -1,14 +1,15 @@
-const object = {
-  id: 101,
-  category: "Comedy",
-  image: "https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg",
-  isActive: true,
-  title: "10 Kids Unaware of Their Costume",
-  author: {
-    name: "John Doe",
-  },
-  description: "It is one thing to subject yourself to a costume mishap",
-  comment_count: 560,
-  view_count: 1568,
-  posted_time: 5,
+// no 1
+const loadAllData = async (category) => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/retro-forum/posts${
+      category ? `?category=${category}` : ``
+    }`
+  );
+  const data = await res.json();
+  displayAllPost(data.posts);
 };
+// 2. displayAllPost() ..... and latestPost()
+
+//append() and appendChild() different
+
+// sort
